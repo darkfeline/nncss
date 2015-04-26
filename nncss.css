@@ -1,0 +1,45 @@
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 auto;
+    max-width: 190mm;
+    margin-top: 7mm;
+    margin-bottom: 4mm;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 15mm;
+    margin-bottom: 7mm;
+}
+
+p {
+    margin: 0 auto;
+    max-width: 190mm;
+    text-align: justify;
+    margin-bottom: 4mm;
+}
+
+table {
+    margin: 0 auto;
+    max-width: 190mm;
+    margin-top: 7mm;
+    margin-bottom: 7mm;
+    border-collapse: collapse;
+}
+
+tr {
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+}
+
+th, td {
+    padding: 2mm;
+}
+
+img {
+    margin: 0 auto;
+    max-width: 190mm;
+    display: block;
+    margin-top: 7mm;
+    margin-bottom: 7mm;
+}

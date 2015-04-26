@@ -1,0 +1,188 @@
+#+TITLE: Sample HTML
+#+PROPERTY: header-args  :noweb-sep "\n\n" :noweb yes
+
+Sample HTML file used for style testing
+
+* Sample text
+
+  #+NAME: ipsum-1p
+  #+BEGIN_SRC html
+    <p>Lorem ipsum dolor sit amet, phasellus elit porta integer, suspendisse rhoncus
+    at vitae, id eu sodales eu, ipsum etiam in velit gravida.  Risus at in aliquet.
+    Eu sem pharetra vehicula mauris ipsum maecenas, pulvinar posuere mollis justo
+    non habitant magna, sapien felis fringilla eget urna, nascetur nulla ac interdum
+    id metus duis, dui integer congue nec ut.  Ipsum ultrices ac mollis justo amet
+    nonummy, amet convallis in id vel curabitur sed, sed ut laoreet est, vel eu ac
+    metus nascetur.  Cum interdum cursus vivamus nunc volutpat sapien, lorem lacus
+    imperdiet.  Ut arcu dapibus sagittis, quam mauris eget vel fringilla, turpis
+    quam ut ornare, pulvinar sit quam ipsum nec.  Adipiscing in est consectetuer
+    eget id gravida.  Lobortis suspendisse etiam tellus nec. Et sit feugiat, odio
+    sapien sodales, in lacinia ultrices risus, est non.</p>
+  #+END_SRC
+
+  #+NAME: ipsum-1s
+  #+BEGIN_SRC html :padlines no
+    Lorem ipsum dolor sit amet, phasellus elit porta integer, suspendisse rhoncus at
+    vitae, id eu sodales eu, ipsum etiam in velit gravida.
+  #+END_SRC
+
+* Headings
+
+  #+BEGIN_SRC html :noweb-ref html-all
+    <h1>Heading 1/Title</h1>
+
+    <<ipsum-1p>>
+
+    <h2>Heading 2</h2>
+
+    <<ipsum-1p>>
+
+    <h3>Heading 3</h3>
+
+    <<ipsum-1p>>
+
+    <h4>Heading 4</h4>
+
+    <<ipsum-1p>>
+
+    <h5>Heading 5</h5>
+
+    <<ipsum-1p>>
+
+    <h6>Heading 6</h6>
+
+    <<ipsum-1p>>
+  #+END_SRC
+
+* Paragraph spacing
+
+  #+BEGIN_SRC html :noweb-ref html-all
+    <h2>Paragraph spacing</h2>
+
+    <<ipsum-1p>>
+  #+END_SRC
+
+* Inline formatting
+
+  #+BEGIN_SRC html :noweb-ref html-all
+    <h2>Inline formatting</h2>
+
+    <p>Here is regular text.</p>
+    <p><em>Here is emphasized text.</em></p>
+    <p><strong>Here is strong text.</strong></p>
+    <p><b>Here is bold text.</b></p>
+    <p><i>Here is italicized text.</i></p>
+  #+END_SRC
+
+* Tables
+
+  #+BEGIN_SRC html :noweb-ref html-all
+    <h2>Tables</h2>
+
+    <table>
+      <tr>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+        <th>E</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>10</td>
+        <td>100</td>
+        <td>Short text.</td>
+        <td><<ipsum-1s>></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>10</td>
+        <td>100</td>
+        <td>Short text.</td>
+        <td><<ipsum-1s>></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>10</td>
+        <td>100</td>
+        <td>Short text.</td>
+        <td><<ipsum-1s>></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>10</td>
+        <td>100</td>
+        <td>Short text.</td>
+        <td><<ipsum-1s>></td>
+      </tr>
+    </table>
+  #+END_SRC
+
+* Images
+
+  #+BEGIN_SRC html :noweb-ref html-all
+    <h2>Images</h2>
+
+    <img src="res/html5-small.png">
+    <img src="res/html5-medium.png">
+    <img src="res/html5-large.png">
+  #+END_SRC
+
+* Lists
+
+  #+BEGIN_SRC html :noweb-ref html-all
+    <h2>Lists</h2>
+  #+END_SRC
+
+** Unordered lists
+
+   #+BEGIN_SRC html :noweb-ref html-all
+     <h3>Unordered lists</h3>
+
+     <ul>
+       <li><<ipsum-1s>></li>
+       <li><<ipsum-1s>></li>
+       <li><<ipsum-1s>></li>
+     </ul>
+   #+END_SRC
+
+** Ordered lists
+
+   #+BEGIN_SRC html :noweb-ref html-all
+     <h3>Ordered lists</h3>
+
+     <ol>
+       <li><<ipsum-1s>></li>
+       <li><<ipsum-1s>></li>
+       <li><<ipsum-1s>></li>
+     </ol>
+   #+END_SRC
+
+** Definition lists
+
+   #+BEGIN_SRC html :noweb-ref html-all
+     <h3>Definition lists</h3>
+
+     <dl>
+       <dt>Term</dt>
+       <dd><<ipsum-1s>></dd>
+       <dt>Term</dt>
+       <dd><<ipsum-1s>></dd>
+       <dt>Term</dt>
+       <dd><<ipsum-1s>></dd>
+     </dl>
+   #+END_SRC
+  
+* Final
+
+  #+BEGIN_SRC html :tangle yes :padlines no
+    <html>
+      <head>
+        <link rel="stylesheet" type="text/css" href="nncss.css">
+      </head>
+
+      <body>
+        <<html-all>>
+      </body>
+    </html>
+  #+END_SRC

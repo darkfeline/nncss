@@ -1,0 +1,123 @@
+#+TITLE: NNCSS
+#+PROPERTY: header-args  :noweb-sep "\n\n" :noweb yes
+
+What is NNCSS?
+
+NNCSS uses literate programming, a technique where code is weaved into the body
+of human-readable text.  This document therefore represents both the
+documentation and the code for NNCSS.
+
+* About literate programming
+
+* Content width
+
+  The width of A4 paper is 210 mm.  Based on this measure, I decided to make the
+  content width for NNCSS 190mm.
+
+  #+NAME: width-and-center
+  #+BEGIN_SRC css
+    margin: 0 auto;
+    max-width: 190mm;
+  #+END_SRC
+
+* Headers
+
+  We apply a standard formatting to all header elements.  We use our general
+  width and centering code from above, as well as setting shared top and bottom
+  margin sizes.
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    h1, h2, h3, h4, h5, h6 {
+        <<width-and-center>>
+        margin-top: 7mm;
+        margin-bottom: 4mm;
+    }
+  #+END_SRC
+
+  We also provide some special formatting for ~<h1>~, which is reserved for the
+  title.
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    h1 {
+        text-align: center;
+        margin-top: 15mm;
+        margin-bottom: 7mm;
+    }
+  #+END_SRC
+
+* Paragraphs
+
+  Our styling for paragraphs uses the shared width and centering (I'll stop
+  mentioning this later, everything will be using this shared styling).  In
+  addition, use justification to make paragraphs look neat and add a bottom
+  margin for spacing purposes.
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    p {
+        <<width-and-center>>
+        text-align: justify;
+        margin-bottom: 4mm;
+    }
+  #+END_SRC
+
+* Tables
+
+  We apply some general formatting for the ~<table>~ element.  Of note is
+  collapsing the borders.  If we did not do that, the borders for the table rows
+  below would not appear.
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    table {
+        <<width-and-center>>
+        margin-top: 7mm;
+        margin-bottom: 7mm;
+        border-collapse: collapse;
+    }
+  #+END_SRC
+
+  I believe that lines separating the rows of a table are essential.  Vertical
+  lines are less important, although I may add a mechanism for these in the
+  future, as used sparingly vertical lines may be helpful in some circumstances.
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    tr {
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
+    }
+  #+END_SRC
+
+  We add some padding for table cells to make it look nice.
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    th, td {
+        padding: 2mm;
+    }
+  #+END_SRC
+
+* Images
+
+  Images in HTML are considered inline block elements.  This is stupid, because
+  there is no good reason for an image to be formatted inline in a document
+  (that is, any page that presents content and not web design vomit).
+
+  We fix this.
+
+  We also add spacing around images so they don't creep out the other HTML
+  elements.
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    img {
+        <<width-and-center>>
+        display: block;
+        margin-top: 7mm;
+        margin-bottom: 7mm;
+    }
+  #+END_SRC
+  
+* Final CSS
+
+  Our final CSS code:
+
+  #+BEGIN_SRC css :tangle yes :padlines no
+    <<css-all>>
+  #+END_SRC
