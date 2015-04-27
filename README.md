@@ -28,6 +28,12 @@ designed, read `docs/sample.html`. (or [read online][2])
 Pictures
 --------
 
+Sample document with default Chrome rendering:
+
+![default rendering](res/sample-raw.png)
+
+![NNCSS rendering](res/sample-nncss.png)
+
 Project files
 -------------
 
