@@ -244,7 +244,55 @@ vomit have no place here.
      </dl>
    #+END_SRC
 
-* Final document
+* Preformatted text and code
+
+  #+BEGIN_SRC html :noweb-ref html-all :exports none
+    <h2>Preformatted text and code</h2> 
+  #+END_SRC
+
+  While less frequently used in outside of technical documents, =<pre>= and
+  =<code>= elements should be displayed properly.
+
+  Preformatted text can be used both for poetry and code.
+
+  #+BEGIN_SRC html :noweb-ref html-all
+    <pre>
+    i will wade out
+                            till my thighs are steeped in burning flowers
+    I will take the sun in my mouth
+    and leap into the ripe air
+                                           Alive
+                                                     with closed eyes
+    to dash against darkness
+                                           in the sleeping curves of my body
+    Shall enter fingers of smooth mastery
+    with chasteness of sea-girls
+                                                Will i complete the mystery
+                                                of my flesh
+    I will rise
+                   After a thousand years
+    lipping
+    flowers
+                 And set my teeth in the silver of the moon
+    </pre>
+      
+    <pre><code>
+    (defun fizzbuzz ()
+      (loop for x from 1 to 100 do
+        (format t "~&~{~A~}"
+          (or (append (when (zerop (mod x 3)) '("Fizz"))
+                      (when (zerop (mod x 5)) '("Buzz")))
+              (list x)))))
+    </code></pre>
+  #+END_SRC
+
+  There is also inline code to consider:
+
+  #+BEGIN_SRC html :noweb-ref html-all
+    <p>Here is some inline code: <code>print("Hello World")</code></p>
+  #+END_SRC
+
+* final document
 
   The final HTML sample document is a concatenation of all of the above code
   inserted into a minimal HTML template:

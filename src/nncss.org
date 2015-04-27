@@ -201,6 +201,16 @@ This document describes what exactly NNCSS contains.
     }
   #+END_SRC
 
+* Preformatted text
+
+  For preformatted text, we just need to limit the width.
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    pre {
+        <<width-and-center>>
+    }
+  #+END_SRC
+  
 * Final CSS code
 
   Our final CSS code:
