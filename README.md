@@ -32,6 +32,8 @@ Sample document with default Chrome rendering:
 
 ![default rendering](res/sample-raw.png)
 
+Same document using NNCSS:
+
 ![NNCSS rendering](res/sample-nncss.png)
 
 Project files
