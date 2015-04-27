@@ -43,6 +43,12 @@ NNCSS is written using Org Babel in a literate programming style.  The source
 code is in `src/`.  The latest version of Emacs is needed to build NNCSS, but a
 Makefile is provided, so you need only run `make` to build everything.
 
+License
+-------
+
+For users who need to worry about legal issues, NNCSS is licensed under the MIT
+license.
+
 Contributing
 ------------
 
