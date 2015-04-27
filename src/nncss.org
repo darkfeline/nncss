@@ -20,7 +20,7 @@ This document describes what exactly NNCSS contains.
 * Content width
 
   The width of A4 paper is 210 mm.  Based on this measure, I decided to make the
-  content width for NNCSS 190mm.
+  content width for NNCSS 190 mm.
 
   #+NAME: width-and-center
   #+BEGIN_SRC css
