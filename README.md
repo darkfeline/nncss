@@ -16,10 +16,14 @@ Getting started
 If you want to get started immediately, just grab `nncss.css`.
 
 If you are interested in what is in NNCSS and how it was designed, read
-`docs/nncss.html`.
+`docs/nncss.html` (or [read online][1]).
+
+[1]: https://rawgit.com/darkfeline/nncss/master/doc/nncss.html
 
 If you are interested in the sample HTML used for testing and how it was
-designed, read `docs/sample.html`.
+designed, read `docs/sample.html`. (or [read online][2])
+
+[2]: https://rawgit.com/darkfeline/nncss/master/doc/sample.html
 
 Pictures
 --------
