@@ -21,7 +21,7 @@ If you are interested in what is in NNCSS and how it was designed, read
 [1]: https://rawgit.com/darkfeline/nncss/master/doc/nncss.html
 
 If you are interested in the sample HTML used for testing and how it was
-designed, read `docs/sample.html`. (or [read online][2])
+designed, read `docs/sample.html` (or [read online][2]).
 
 [2]: https://rawgit.com/darkfeline/nncss/master/doc/sample.html
 
