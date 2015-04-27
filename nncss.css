@@ -43,3 +43,34 @@ img {
     margin-top: 7mm;
     margin-bottom: 7mm;
 }
+
+ul, ol, dl {
+    margin: 0 auto;
+    max-width: 190mm;
+    margin-top: 4mm;
+    margin-bottom: 4mm;
+}
+
+li {
+    margin-top: 1mm;
+    margin-bottom: 1mm;
+}
+
+dt {
+    float: left;
+    clear: left;
+    font-weight: bold;
+    text-align: right;
+    width: 27mm;
+    margin-right: 3mm;
+}
+
+dt:after {
+    content: ":";
+}
+
+dd {
+    margin-left: 30mm;
+    margin-top: 1mm;
+    margin-bottom: 1mm;
+}

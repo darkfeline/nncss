@@ -3,11 +3,19 @@
 
 What is NNCSS?
 
-NNCSS uses literate programming, a technique where code is weaved into the body
-of human-readable text.  This document therefore represents both the
-documentation and the code for NNCSS.
+NNCSS is No Nonsense CSS, a simple CSS file that can be used to "publish"
+documents written in HTML.
 
-* About literate programming
+Simply put, it is a KISS CSS file that fixes the default styling of HTML so that
+an HTML document is presentable without modification.
+
+We are interested in proper documents that are marked up using HTML: Hyper Text
+Markup Language (not Make A Pretty Website With Slideshows Language).
+
+We are not interested in web design vomit: Javascript, drop-down menus,
+sidebars, slideshows, and other forms of web design vomit have no place here.
+
+This document describes what exactly NNCSS contains.
 
 * Content width
 
@@ -102,8 +110,7 @@ documentation and the code for NNCSS.
 
   We fix this.
 
-  We also add spacing around images so they don't creep out the other HTML
-  elements.
+  We also add spacing around images so they have room to breathe.
 
   #+BEGIN_SRC css :noweb-ref css-all
     img {
@@ -113,8 +120,88 @@ documentation and the code for NNCSS.
         margin-bottom: 7mm;
     }
   #+END_SRC
-  
-* Final CSS
+
+* Lists
+
+  Again, we apply our shared width and centering style, along with some vertical
+  spacing.
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    ul, ol, dl {
+        <<width-and-center>>
+        margin-top: 4mm;
+        margin-bottom: 4mm;
+    }
+  #+END_SRC
+
+  The unordered and ordered lists do not require much further tweaking.  We add
+  some space between each item for the eyes.
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    li {
+        margin-top: 1mm;
+        margin-bottom: 1mm;
+    }
+  #+END_SRC
+
+  Unfortunately, definition lists need more work because the default styling is
+  wanting, but a few tweaks is all that is needed fix them.
+
+  First, we fix the definition terms.  We float the definition terms to the
+  left, bold them to add weight, and append a colon.  We want the text to align
+  right, to bring the terms close to their definitions.  In order for the
+  alignment to work, we have to define the width.  To finish, we add some
+  padding space on the right to keep the terms from getting /too/ close to their
+  definitions.
+
+  Next, we fix the definition bodies.  We give them a left margin to make space
+  for the terms and add a little vertical space for visual padding.
+
+  The most complex part is getting the spacing right, but a handy visualization
+  helps:
+
+  #+BEGIN_EXAMPLE
+    For <dt>:
+        
+    width + margin-right
+        /---------\
+        
+          width
+        /-------\
+        
+    For <dd>:
+        
+        margin-left
+        /---------\
+        
+        ----------------------------------
+        |         |                      |
+        |   term: | definition           |
+        |         |                      |
+  #+END_EXAMPLE
+
+  #+BEGIN_SRC css :noweb-ref css-all
+    dt {
+        float: left;
+        clear: left;
+        font-weight: bold;
+        text-align: right;
+        width: 27mm;
+        margin-right: 3mm;
+    }
+
+    dt:after {
+        content: ":";
+    }
+
+    dd {
+        margin-left: 30mm;
+        margin-top: 1mm;
+        margin-bottom: 1mm;
+    }
+  #+END_SRC
+
+* Final CSS code
 
   Our final CSS code:
 

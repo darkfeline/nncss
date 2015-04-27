@@ -1,12 +1,24 @@
 #+TITLE: Sample HTML
 #+PROPERTY: header-args  :noweb-sep "\n\n" :noweb yes
 
-Sample HTML file used for style testing
+In order to design and test NNCSS, a sample HTML file is needed.  In particular,
+this sample HTML file must be clean: it should not be web design vomit like 99%
+of modern web sites, but a proper document that is marked up using a markup
+language: Hyper Text Markup Language.
 
-* Sample text
+In short, we want a document that contains sections delimited using headers,
+tables containing tabular data, lists of items, images and figures used to
+support the content of the document, and so on.
+
+Javascript, drop-down menus, sidebars, slideshows, and other forms of web design
+vomit have no place here.
+
+* Filler text
+
+  The filler text used in the sample file comes from Lorem Ipsum.
 
   #+NAME: ipsum-1p
-  #+BEGIN_SRC html
+  #+BEGIN_SRC html :exports none
     <p>Lorem ipsum dolor sit amet, phasellus elit porta integer, suspendisse rhoncus
     at vitae, id eu sodales eu, ipsum etiam in velit gravida.  Risus at in aliquet.
     Eu sem pharetra vehicula mauris ipsum maecenas, pulvinar posuere mollis justo
@@ -21,12 +33,18 @@ Sample HTML file used for style testing
   #+END_SRC
 
   #+NAME: ipsum-1s
-  #+BEGIN_SRC html :padlines no
+  #+BEGIN_SRC html :padlines no :exports none
     Lorem ipsum dolor sit amet, phasellus elit porta integer, suspendisse rhoncus at
     vitae, id eu sodales eu, ipsum etiam in velit gravida.
   #+END_SRC
 
 * Headings
+
+  Headings are the bread and butter for organizing any long piece of writing.
+  We include all six heading levels in our sample document to test how our style
+  fares on header elements.  We put a paragraph of text after each header to
+  confirm the spacing: the spacing between adjacent header elements is less
+  important than the spacing between paragraphs and headers.
 
   #+BEGIN_SRC html :noweb-ref html-all
     <h1>Heading 1/Title</h1>
@@ -56,13 +74,25 @@ Sample HTML file used for style testing
 
 * Paragraph spacing
 
+  The spacing between paragraphs is also important.  Words and paragraphs are
+  the highest priority content, and we want them to be easy to read.
+
   #+BEGIN_SRC html :noweb-ref html-all
     <h2>Paragraph spacing</h2>
+
+    <<ipsum-1p>>
+
+    <<ipsum-1p>>
 
     <<ipsum-1p>>
   #+END_SRC
 
 * Inline formatting
+
+  Occasionally, inline markup is used to complement the raw words and sentences
+  of language.  We want to make sure these show up as expected.  The
+  expectations are basic, but not negotiable (imagine if emphasized text were
+  styled 50% smaller!).
 
   #+BEGIN_SRC html :noweb-ref html-all
     <h2>Inline formatting</h2>
@@ -76,6 +106,25 @@ Sample HTML file used for style testing
 
 * Tables
 
+  Tables are also important tools for writing a document.  There simply is no
+  replacement for displaying data in an easily understandable format (except
+  images, of course).
+
+  #+NAME: table-row
+  #+BEGIN_SRC html :exports none
+    <tr>
+      <td>1</td>
+      <td>100</td>
+      <td>Short text.</td>
+      <td>
+        <<ipsum-1s>>
+      </td>
+      <td>
+        <<ipsum-1s>>
+      </td>
+    </tr>
+  #+END_SRC
+
   #+BEGIN_SRC html :noweb-ref html-all
     <h2>Tables</h2>
 
@@ -87,38 +136,16 @@ Sample HTML file used for style testing
         <th>D</th>
         <th>E</th>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>10</td>
-        <td>100</td>
-        <td>Short text.</td>
-        <td><<ipsum-1s>></td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>10</td>
-        <td>100</td>
-        <td>Short text.</td>
-        <td><<ipsum-1s>></td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>10</td>
-        <td>100</td>
-        <td>Short text.</td>
-        <td><<ipsum-1s>></td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>10</td>
-        <td>100</td>
-        <td>Short text.</td>
-        <td><<ipsum-1s>></td>
-      </tr>
+      <<table-row>>
+      <<table-row>>
+      <<table-row>>
     </table>
   #+END_SRC
 
 * Images
+
+  A picture is worth a thousand words.  When we include an image in an article
+  we write, we want it to show up nice and clear.
 
   #+BEGIN_SRC html :noweb-ref html-all
     <h2>Images</h2>
@@ -130,50 +157,97 @@ Sample HTML file used for style testing
 
 * Lists
 
+  When a table is too much, we use lists.  Humans have been making lists for a
+  long time because they're just that useful.
+
   #+BEGIN_SRC html :noweb-ref html-all
     <h2>Lists</h2>
   #+END_SRC
 
 ** Unordered lists
 
+   The first type of list is the unordered list.  We want to make sure lists
+   properly display paragraphs as well.
+
    #+BEGIN_SRC html :noweb-ref html-all
      <h3>Unordered lists</h3>
 
      <ul>
-       <li><<ipsum-1s>></li>
-       <li><<ipsum-1s>></li>
-       <li><<ipsum-1s>></li>
+       <li>
+         <<ipsum-1s>>
+       </li>
+       <li>
+         <<ipsum-1s>>
+       </li>
+       <li>
+         <<ipsum-1p>>
+         <<ipsum-1p>>
+       </li>
      </ul>
    #+END_SRC
 
 ** Ordered lists
 
+   The next type of list is the ordered list.  Again, we don't have high
+   standards, we just want them to work.
+
    #+BEGIN_SRC html :noweb-ref html-all
      <h3>Ordered lists</h3>
 
      <ol>
-       <li><<ipsum-1s>></li>
-       <li><<ipsum-1s>></li>
-       <li><<ipsum-1s>></li>
+       <li>
+         <<ipsum-1s>>
+       </li>
+       <li>
+         <<ipsum-1s>>
+       </li>
+       <li>
+         <<ipsum-1p>>
+         <<ipsum-1p>>
+       </li>
      </ol>
    #+END_SRC
 
 ** Definition lists
+
+   Finally, the oft-neglected definition list.  They aren't used as often as
+   they deserve to be.  Most laypeople make due with unholy contraptions like
+
+   #+BEGIN_SRC html
+     <ul>
+       <li>Term: definition</li>
+     </ul>
+   #+END_SRC
+
+   but we know better, right?
+
+   Remember, definition lists are used whenever you have a key-value mapping;
+   they're not restricted to definitions!
 
    #+BEGIN_SRC html :noweb-ref html-all
      <h3>Definition lists</h3>
 
      <dl>
        <dt>Term</dt>
-       <dd><<ipsum-1s>></dd>
+       <dd>
+         <<ipsum-1s>>
+       </dd>
        <dt>Term</dt>
-       <dd><<ipsum-1s>></dd>
+       <dd>
+         <<ipsum-1s>>
+       </dd>
        <dt>Term</dt>
-       <dd><<ipsum-1s>></dd>
+       <dd>
+         <<ipsum-1p>>
+         <<ipsum-1p>>
+       </dd>
      </dl>
    #+END_SRC
-  
-* Final
+
+* Final document
+
+  The final HTML sample document is a concatenation of all of the above code
+  inserted into a minimal HTML template:
 
   #+BEGIN_SRC html :tangle yes :padlines no
     <html>
